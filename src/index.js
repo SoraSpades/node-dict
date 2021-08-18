@@ -4,7 +4,7 @@ const { makeRequest, parseResult } = require("./jisho")
 
 // Express config
 const app = express()
-app.use(express.static("/public"))
+app.use(express.static(path.join(__dirname, "../public/")))
 
 // Express endpoints
 app.get("/", async (req, res) => { // Main page
