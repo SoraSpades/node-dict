@@ -4,12 +4,23 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>test</h1>
-    <div id="search-div">
-        <form id="search-form">
-            <input id="search-text" type="text">
-            <button id="search-button">Search</button>
-        </form>
+    <div id="topbar">
+        <h1 onclick="location.href = '/'">Diccionario</h1>
+        <a href="/about">About</a>
+        <a href="/">Homepage</a>
     </div>
+    <main>
+        <div id="main-sidebar">
+            <div id="search-div">
+                <form id="search-form">
+                    <input id="search-text" type="text" required>
+                    <button id="search-button">Search</button>
+                </form>
+            </div>
+        </div>
+        <div id="main-container">
+
+        </div>
+    </main>
 </body>
 </html>

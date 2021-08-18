@@ -1,4 +1,104 @@
-h1 {
-    color: red;
-    font-size: 200px;
+* {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+main {
+    margin-top: 5rem;
+    display: flex;
+    height: 90%;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: calc(100% - 5rem);
+}
+
+#main-sidebar {
+    flex: 1;
+    background-color: #353535;
+    padding: 10px;
+}
+
+#main-container {
+    flex: 5;
+    background-color: #1d2626;
+}
+
+#topbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 5rem;
+    width: 100%;
+    background-color: #353535;
+    overflow: hidden;
+    margin: none;
+}
+
+#topbar {
+    position: fixed;
+    height: 5rem;
+    width: 100%;
+    background-color: #353535;
+    margin: none;
+    overflow: hidden;
+}
+
+#topbar a {
+    float: right;
+    padding: 1.8rem 2rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial;
+    height: 100%;
+}
+
+#topbar a:hover {
+    background-color: #adadad;
+}
+
+#topbar h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2rem;
+    float: left;
+}
+
+#topbar h1:hover {
+    cursor: pointer;
+}
+
+
+/* SIDEBAR FORM AND BUTTON */
+#main-sidebar button {
+    cursor: pointer;
+    padding: 12px;
+    background: #4c6363;
+    border: none;
+    color: white;
+    font-size: 16px;
+    transition: background .3s ease;
+    width: 100%;
+}
+
+#main-sidebar button:hover {
+    background: #6a8a8a;
+}
+
+#main-sidebar button:disabled {
+    cursor: default;
+    background: #7c5cbf94;
+}
+
+#main-sidebar input {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #eeeeee;
+    padding: 12px;
+    outline: none;
 }
