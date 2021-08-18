@@ -5,7 +5,7 @@ const axios = require("axios")
  * Make a request to the Jisho API
  * @param {String} word - Word to search
  * @param {Number} maxResults - Max results to show, default 5
- * @returns {Array} First results up to the number specified
+ * @returns {Promise<Array>} First results up to the number specified
  */
 const makeRequest = async (word, maxResults=5) => {
     try {
@@ -16,13 +16,13 @@ const makeRequest = async (word, maxResults=5) => {
     }
 }
 
-
 /**
  * @typedef {Object} parsedResult
  * @property {String} japanese - Japanese word (with kanji)
  * @property {String} japaneseReading - Japanese reading (Hiragana)
  * @property {String[]} definitions - English definitions
  * @property {String} [jlpt] - Japanese level by the JLPT standard
+ * @property {String} [wordType] - Type of the word
  */
 /**
  * Transforms the result from an API in a more friendly, one-leveled object
@@ -36,6 +36,7 @@ const parseResult = (result) => {
         definitions     : [],
     }
     if (result.jlpt[0]) parsedResult.jlpt = result.jlpt[0]
+    if (result.senses[0].parts_of_speech[0]) parsedResult.wordType = result.senses[0].parts_of_speech[0] 
     result.senses.forEach(sense => {
         parsedResult.definitions.push(sense.english_definitions.join(", "))
     });
