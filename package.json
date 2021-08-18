@@ -1,0 +1,20 @@
+{
+  "name": "new-dict",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "env-cmd nodemon src/index.js -e js,html,css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "fetch": "^1.1.0"
+  }
+}
