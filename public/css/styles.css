@@ -180,3 +180,15 @@ main {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 30px;
 }
+
+
+#noresults {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}

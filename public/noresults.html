@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="topbar">
+        <h1 onclick="location.href = '/'">Dictionary</h1>
+        <a href="/about">About</a>
+        <a href="/">Homepage</a>
+    </div>
+    <main>
+        <div id="main-sidebar">
+            <div id="search-div">
+                <form id="search-form" action="/search">
+                    <input id="search-text" type="text" name="word" required>
+                    <button id="search-button">Search</button>
+                </form>
+            </div>
+        </div>
+        <div id="main-container">
+            <div id="noresults">NO RESULTS FOUND</div> 
+        </div>
+    </main>
+</body>
+</html>
