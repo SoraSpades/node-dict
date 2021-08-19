@@ -145,6 +145,7 @@ main {
     display: flex;
     align-items: center;
     padding-top: 10px;
+    font-size: 20px;
     margin-bottom: 0px;
     grid-area: japanese-reading; 
     font-family: 'Noto Sans JP', sans-serif;;
