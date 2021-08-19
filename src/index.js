@@ -18,7 +18,7 @@ app.get("/", async (req, res) => { // Main page
 
 app.get("/search", async (req, res) => { // Results page
     if (!req.query.word) return res.status(400).send()
-    const results = await makeRequest(req.query.word, 10)
+    const results = await makeRequest(req.query.word, 25)
     const parsedResults = results.map(r=>parseResult(r))
     res.render("results", { results : parsedResults })
 })
