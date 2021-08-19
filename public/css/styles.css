@@ -24,6 +24,8 @@ main {
 #main-container {
     flex: 5;
     background-color: #1d2626;
+    height: 100%;
+    overflow-y: auto;
 }
 
 #topbar {
@@ -101,4 +103,69 @@ main {
     border: 1px solid #eeeeee;
     padding: 12px;
     outline: none;
+}
+
+/* Individual Result */
+#result-container {
+    background-color: white;
+    margin-top: 10px;
+    width: 100%;
+    display: grid;
+    height: auto;
+    grid-template-columns: 0.5fr 0.4fr 1.1fr 1fr;
+    grid-template-rows: 0.5fr 0.6fr 1.3fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "japanese japanese japanese-reading japanese-reading"
+      "japanese japanese definitions definitions"
+      "wordType jlpt definitions definitions";
+  }
+  
+.japanese { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: japanese; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 10px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
+  
+.japanese-reading { 
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    grid-area: japanese-reading; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: start;
+    margin: 10px;
+}
+
+.definitions { 
+    grid-area: definitions; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: start;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+.wordType { 
+    grid-area: wordType; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.jlpt { 
+    grid-area: jlpt; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
 }
