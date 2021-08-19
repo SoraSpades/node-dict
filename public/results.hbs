@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="topbar">
+        <h1 onclick="location.href = '/'">Dictionary</h1>
+        <a href="/about">About</a>
+        <a href="/">Homepage</a>
+    </div>
+    <main>
+        <div id="main-sidebar">
+            <div id="search-div">
+                <form id="search-form">
+                    <input id="search-text" type="text" name="word" required>
+                    <button id="search-button">Search</button>
+                </form>
+            </div>
+        </div>
+        <div id="main-container">
+            {{#each results}}
+            <div id="result-container">
+                <div class="japanese">{{this.japanese}}</p></div>
+                <div class="japanese-reading">{{this.japaneseReading}}</div>
+                <div class="definitions"><ul>
+                    {{#each this.definitions}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul></div>
+                <div class="wordType">{{this.wordType}}</div>
+                <div class="jlpt">{{this.jlpt}}</div>
+            </div>
+            {{/each}}
+        </div>
+    </main>
+</body>
+</html>

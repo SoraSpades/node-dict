@@ -35,7 +35,7 @@ const parseResult = (result) => {
         japaneseReading : result.japanese[0].reading,
         definitions     : [],
     }
-    if (result.jlpt[0]) parsedResult.jlpt = result.jlpt[0]
+    if (result.jlpt[0]) parsedResult.jlpt = "JLPT " + result.jlpt[0].split("-")[1].toUpperCase()
     if (result.senses[0].parts_of_speech[0]) parsedResult.wordType = result.senses[0].parts_of_speech[0] 
     result.senses.forEach(sense => {
         const joinedSense = sense.english_definitions.join(", ")
