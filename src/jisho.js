@@ -34,7 +34,7 @@ const makeRequest = async (word, maxResults=-1) => {
  */
 const parseResult = (result) => {
     const parsedResult = {
-        japanese        : result.japanese[0].word,
+        japanese        : result.japanese[0].word ? result.japanese[0].word : result.japanese[0].reading,
         japaneseReading : result.japanese[0].reading,
         definitions     : [],
     }
