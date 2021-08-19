@@ -7,11 +7,13 @@ const axios = require("axios")
  * @param {Number} maxResults - Max results to show, default 5
  * @returns {Promise<Array>} First results up to the number specified
  */
-const makeRequest = async (word, maxResults=5) => {
+const makeRequest = async (word, maxResults=-1) => {
     try {
         const response = await axios.get(encodeURI("https://jisho.org/api/v1/search/words?keyword=" + word))
         const filteredResponse = response.data.data.filter(object => object.senses[0].parts_of_speech[0] != "Wikipedia definition")
-        return filteredResponse.slice(0, maxResults)
+        if (filteredResponse.length == 0) return []
+        else if (maxResults == -1) return filteredResponse
+        else return filteredResponse.slice(0, maxResults)
     } catch (e) {
         console.log(e)
     }
