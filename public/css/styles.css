@@ -182,7 +182,7 @@ main {
 }
 
 
-#noresults {
+#boldfont {
     display: flex;
     vertical-align: middle;
     align-items: center;
@@ -191,4 +191,16 @@ main {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 50px;
     font-weight: bold;
+}
+
+#about-text {
+    color: white;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+}
+
+#about-text a {
+    color: white;
 }
