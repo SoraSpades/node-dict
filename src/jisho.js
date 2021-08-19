@@ -38,7 +38,9 @@ const parseResult = (result) => {
     if (result.jlpt[0]) parsedResult.jlpt = result.jlpt[0]
     if (result.senses[0].parts_of_speech[0]) parsedResult.wordType = result.senses[0].parts_of_speech[0] 
     result.senses.forEach(sense => {
-        parsedResult.definitions.push(sense.english_definitions.join(", "))
+        const joinedSense = sense.english_definitions.join(", ")
+        const capitalizedSense = joinedSense.charAt(0).toUpperCase() + joinedSense.slice(1)
+        parsedResult.definitions.push(capitalizedSense)
     });
     return parsedResult
 }
