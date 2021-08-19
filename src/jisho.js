@@ -10,7 +10,8 @@ const axios = require("axios")
 const makeRequest = async (word, maxResults=5) => {
     try {
         const response = await axios.get(encodeURI("https://jisho.org/api/v1/search/words?keyword=" + word))
-        return response.data.data.slice(0, maxResults)
+        const filteredResponse = response.data.data.filter(object => object.senses[0].parts_of_speech[0] != "Wikipedia definition")
+        return filteredResponse.slice(0, maxResults)
     } catch (e) {
         console.log(e)
     }
